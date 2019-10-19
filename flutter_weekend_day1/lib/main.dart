@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'page_row.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,56 +41,54 @@ class PageHome extends StatelessWidget {
 
       ),
 
-      body: Column(
-        children: <Widget>[
-          Container(
-            child: MaterialButton(
-              onPressed: (){
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            Container(
+//            margin: EdgeInsets.only(left: 30.0),
+              child: MaterialButton(
+                onPressed: (){
 
-              },
-              color: Colors.purple,
-              textColor: Colors.white,
-              child: Text('Column'),
-            ),
-          ),
+                  //pindah page
+                  //navigator
+                  //push : dari class A ke class B
+                  //pop : dari class B ke class A
 
-          //button
-          //materialbutton
-          //raised button
-          //flat button
-          Container(
-            child: MaterialButton(
-              onPressed: (){},
-              color: Colors.purple,
-              textColor: Colors.white,
-              child: Text('Row'),
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=> PageColumn()
+                  ));
+
+
+                },
+                color: Colors.purple,
+                textColor: Colors.white,
+                child: Text('Column'),
+              ),
             ),
-          )
-        ],
+
+            //button
+            //materialbutton
+            //raised button
+            //flat button
+            Container(
+              child: MaterialButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> PageRow()
+                  ));
+                },
+                color: Colors.purple,
+                textColor: Colors.white,
+                child: Text('Row'),
+              ),
+            )
+          ],
+        ),
+
       ),
 //      body: Column(
 //        children: <Widget>[
-//          Container(
-//            margin: EdgeInsets.all(12),
-//            child: Text("Hallo "),
-//            color: Colors.lime,
-//            padding: EdgeInsets.all(16.0),
-//          ),
 //
-//          Container(
-//            margin: EdgeInsets.all(12),
-//            child: Text("Selamat Datang "),
-//            color: Colors.purple,
-//            padding: EdgeInsets.all(16.0),
-//          ),
-//
-//
-//          Container(
-//            margin: EdgeInsets.all(12),
-//            child: Text("di Flutter "),
-//            color: Colors.purple,
-//            padding: EdgeInsets.all(16.0),
-//          ),
 //
 //
 //        ],
@@ -110,6 +109,50 @@ class PageHome extends StatelessWidget {
     );
   }
 }
+
+class PageColumn extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Page Column'),
+        backgroundColor: Colors.purple,
+      ),
+
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(12),
+              child: Text("Hallo "),
+              color: Colors.lime,
+              padding: EdgeInsets.all(16.0),
+            ),
+
+            Container(
+              margin: EdgeInsets.all(12),
+              child: Text("Selamat Datang "),
+              color: Colors.purple,
+              padding: EdgeInsets.all(16.0),
+            ),
+
+
+            Container(
+              margin: EdgeInsets.all(12),
+              child: Text("di Flutter "),
+              color: Colors.purple,
+              padding: EdgeInsets.all(16.0),
+            ),
+          ],
+
+        ),
+      ),
+    );
+  }
+}
+
+
+
 
 
 
