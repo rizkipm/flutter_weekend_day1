@@ -44,6 +44,13 @@ class PageHome extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
+            
+            Container(
+              margin: EdgeInsets.all(20.0),
+              child: Image.asset('gambar/logo.png', height: 100.0,
+                width: 150.0,
+              ),
+            ),
             Container(
 //            margin: EdgeInsets.only(left: 30.0),
               child: MaterialButton(
